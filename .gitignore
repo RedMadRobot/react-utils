@@ -1,0 +1,6 @@
+node_modules
+build
+public
+storybook-static
+package
+.idea

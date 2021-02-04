@@ -1,0 +1,65 @@
+{
+  "name": "rmr-utils",
+  "version": "2.0.1",
+  "description": "",
+  "main": "build/index.js",
+  "typings": "build/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json -d",
+    "test:generate-output": "jest --json --outputFile=.jest-test-results.json",
+    "test": "jest",
+    "lint": "eslint -c .eslintrc.json \"./src/**/*.{ts,tsx}\"",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "prebuild:storybook": "npm run test:generate-output"
+  },
+  "jest": {
+    "transform": {
+      "\\.ts$": "ts-jest"
+    }
+  },
+  "files": [
+    "**/*.d.ts",
+    "**/*.js",
+    "**/*.js.map",
+    "!**/*.test.*"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "@babel/preset-react": "^7.7.4",
+    "@babel/preset-typescript": "^7.7.4",
+    "@rmr/eslint-plugin-rmr-code-style": "^3.0.1",
+    "@storybook/addon-actions": "^6.1.15",
+    "@storybook/addon-essentials": "^6.1.15",
+    "@storybook/addon-jest": "^6.1.15",
+    "@storybook/addon-links": "^6.1.15",
+    "@storybook/react": "^6.1.15",
+    "@testing-library/react": "^11.2.3",
+    "@testing-library/react-hooks": "^5.0.3",
+    "@types/jest": "^24.0.23",
+    "@typescript-eslint/eslint-plugin": "^4.14.1",
+    "@typescript-eslint/parser": "^2.10.0",
+    "babel-jest": "^26.6.3",
+    "babel-loader": "^8.0.6",
+    "eslint": "^6.7.2",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.1.3",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "jest": "^26.6.3",
+    "prettier": "^2.2.1",
+    "react": "^16.12.0",
+    "react-dom": "^17.0.1",
+    "ts-jest": "^26.4.4",
+    "typescript": "^4.1.3"
+  },
+  "dependencies": {
+    "lodash": "^4.17.20"
+  }
+}

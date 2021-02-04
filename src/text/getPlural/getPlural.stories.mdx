@@ -1,0 +1,30 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import {useCallback, useState} from 'react';
+import {getPlural as f} from './index';
+
+# getPlural
+<Meta title="Text" />
+
+<Canvas>
+  <Story name="getPlural" parameters={{jest: ["getPlural.test.js"]}}>
+    {
+      () => {
+        const [text, setText] = useState('школ, школа, школы');
+        const [count, setCount] = useState(10);
+        const handleCountChange = useCallback((ev) => {
+          setCount(ev.target.value);
+        }, [count]);
+        const handleTextChange = useCallback((ev) => {
+          setText(ev.target.value);
+        }, [text]);
+        return (
+          <div>
+            <input type="number" value={count} onChange={handleCountChange} />
+            <input type="text" value={text} onChange={handleTextChange} />
+            <div>{f(Number(count), text.split(',').map(v => v.trim()))}</div>
+          </div>
+        )
+      }
+    }
+  </Story>
+</Canvas>

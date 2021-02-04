@@ -1,0 +1,26 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import {useCallback, useState} from 'react';
+import {useDebounce as f} from './index';
+
+# getPlural
+<Meta title="Hooks" />
+
+<Canvas>
+  <Story name="useDebounce" parameters={{jest: ["useDebounce.test.js"]}}>
+    {
+      () => {
+        const [text, setText] = useState('text');
+        const handleTextChange = useCallback((ev) => {
+          setText(ev.target.value);
+        }, []);
+        const debouncedValue = f(text, 3000);
+        return (
+          <div>
+            <input type="text" value={text} onChange={handleTextChange} />
+            <div>Debounced value: {debouncedValue}</div>
+          </div>
+        )
+      }
+    }
+  </Story>
+</Canvas>
