@@ -1,5 +1,5 @@
 {
-  "name": "rmr-utils",
+  "name": "@rmr/react-utils",
   "version": "2.0.1",
   "description": "",
   "main": "build/index.js",
@@ -11,7 +11,8 @@
     "lint": "eslint -c .eslintrc.json \"./src/**/*.{ts,tsx}\"",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "prebuild:storybook": "npm run test:generate-output"
+    "prebuild:storybook": "npm run test:generate-output",
+    "deploy-storybook": "storybook-to-ghpages"
   },
   "jest": {
     "transform": {
@@ -38,6 +39,7 @@
     "@storybook/addon-jest": "^6.1.15",
     "@storybook/addon-links": "^6.1.15",
     "@storybook/react": "^6.1.15",
+    "@storybook/storybook-deployer": "^2.8.7",
     "@testing-library/react": "^11.2.3",
     "@testing-library/react-hooks": "^5.0.3",
     "@types/jest": "^24.0.23",
