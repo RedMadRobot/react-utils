@@ -1,0 +1,22 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import {useBoolean as useHook} from './index';
+
+# getPlural
+<Meta title="Hooks" />
+
+<Canvas>
+  <Story name="useBoolean" parameters={{jest: ["useBoolean.test.js"]}}>
+    {
+      () => {
+        const [value, setTrue, setFalse] = useHook();
+        return (
+          <div>
+            <div>Value: {value ? 'true' : 'false'}</div>
+            <button onClick={setTrue}>set true</button>
+            <button onClick={setFalse}>set false</button>
+          </div>
+        )
+      }
+    }
+  </Story>
+</Canvas>
